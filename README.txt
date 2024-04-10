@@ -24,4 +24,4 @@ I am using kaboom:
 ---> Kaboom.js is a JavaScript library designed to make programming games fun and accessible.
 With Kaboom.js, you don't need to be a gaming industry veteran to create engaging and visually
 appealing games. It's a perfect tool for developers who want to showcase their coding prowess in a unique
-and interactive way.
+and interactive way
