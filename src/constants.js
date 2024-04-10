@@ -5,7 +5,7 @@ export const dialogueData = {
   pc: `This is my PC. I work mostly in JavaScript/Python and C these days.
     I've made some projects in those languages. Anyway i just like programming.
     Here is my <a href="https://github.com/BrennoBener" target="_blank">Github</a>!`,
-  "cs-degree": `This is my Web Design degree. I hung it on the wall because I'm proud of it. It was a very theoretical degree from freeCodeCamp but I think it gave me a good foundation.`,
+  "cs-degree": `This is my Software Engineer degree. I hung it on the wall because I'm proud of it. It was a very theoretical degree from but I think it gave me a good foundation.`,
   "sofa-table": `That's my sofa. I like to relax here and watch YouTube.`,
 
   tv: `That's my TV. I've been watching tech youtubers a lot recently like :
