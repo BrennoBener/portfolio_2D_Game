@@ -22,7 +22,7 @@ k.setBackground(k.Color.fromHex("311047"));
 k.scene("main", async () => {
     const mapData = await (await fetch("./map.json")).json();
     const layers = mapData.layers;
-    const map = k.make([
+    const map = k.add([
         k.sprite("map"),
         k.pos(0),
         k.scale(scaleFactor)
@@ -57,12 +57,37 @@ k.scene("main", async () => {
                 if (boundary.name) {
                     player.onCollide(boundary.name, () => {
                         player.isInDialogue = true;
-                        displayDialogue();
+                        displayDialogue("TODO", () => (player.isInDialogue = false));
                     });
+                }
+            }
+            continue;
+        }
+
+        if (layer.name === "spawnpoints") {
+            for (const entity of layer.objects) {
+                if (entity.name === "player") {
+                    player.pos = k.vec2(
+                        (map.pos.x + entity.x) * scaleFactor,
+                        (map.pos.y + entity.y) * scaleFactor
+                    );
+                    k.add(player);
+                    continue;
                 }
             }
         }
     }
+
+    k.onUpdate(() => {
+        k.camPos(player.pos.x, player.pos.y + 100);
+    });
+
+    k.onMouseDown((muoseBtn) => {
+        if(muoseBtn != "left" || player.isInDialogue)
+            return;
+        const worldMousePos = k.toWorld(k.mousePos());
+        player.moveTo(worldMousePos, player.speed);
+    });
 });
 
 k.go("main");
